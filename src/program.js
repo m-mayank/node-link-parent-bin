@@ -1,19 +1,10 @@
-import * as commander from 'commander';
-
-export interface Options {
-    linkDevDependencies: boolean;
-    linkDependencies: boolean;
-    linkLocalDependencies: boolean;
-    logLevel: 'debug' | 'info' | 'error';
-    childDirectoryRoot: string;
-    linkAllNodeDirectories: boolean;
-}
-
-const parseBoolean = (val: string) =>  val.toLowerCase() === 'true';
-const describeLinking = (name: string, defaultValue: boolean) => `Enables linking of parents \`${name}\`. Defaults to: ${defaultValue}`;
-
-export const program = {
-    parse(argv: string[]): Options {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var commander = require("commander");
+var parseBoolean = function (val) { return val.toLowerCase() === 'true'; };
+var describeLinking = function (name, defaultValue) { return "Enables linking of parents `" + name + "`. Defaults to: " + defaultValue; };
+exports.program = {
+    parse: function (argv) {
         return commander
             .usage('[options]')
             .version(require('../package.json').version)
@@ -23,6 +14,7 @@ export const program = {
             .option('-s, --link-dependencies <true|false>', describeLinking('dependencies', false), parseBoolean, false)
             .option('-o, --link-local-dependencies <true|false>', describeLinking('localDependencies', false), parseBoolean, false)
             .option('-l, --log-level <debug|info|error|off>', 'Set the log level', /debug|info|error|off/, 'info')
-            .parse(argv) as any;
+            .parse(argv);
     }
-} 
+};
+//# sourceMappingURL=program.js.map

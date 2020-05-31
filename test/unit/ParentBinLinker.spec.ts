@@ -20,6 +20,7 @@ describe('ParentBinLinker', () => {
             linkDependencies: false,
             linkDevDependencies: true,
             linkLocalDependencies: false,
+            linkAllNodeDirectories: false,
             logLevel: 'info',
             childDirectoryRoot: 'packages'
         };

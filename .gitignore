@@ -1,6 +1,7 @@
 node_modules
 .stryker-tmp
-*.js
+# TODO - To be uncomented
+# *.js
 !tasks/*.js
 *.d.ts
 *.map
@@ -9,3 +10,6 @@ node_modules
 # IntelliJ project files
 .idea
 *.iml
+
+# Test folders
+test
